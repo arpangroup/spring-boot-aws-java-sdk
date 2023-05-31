@@ -1,0 +1,38 @@
+#https://www.jetbrains.com/help/idea/exploring-http-syntax.html#break-long-requests-into-several-lines
+
+GET http://localhost:8080/api
+Accept: application/text
+
+> {%
+client.test("TestHelloWorldFailure", function(){
+    client.assert(response.status === 400, "hello world....")
+});
+client.test("TestHelloWorldSuccess", function(){
+    client.assert(response.status === 200, "hello world....")
+});
+ %}
+
+### uploadFile:
+POST http://localhost:8080/api/files
+Content-Type: multipart/form-data; boundary=MyFileUploadBounadary
+
+--MyFileUploadBounadary
+Content-Disposition: form-data; name="file"; filename="aaa.jpg"
+
+< C:\Users\Arpan\Pictures\business-idea\aaa.jpg
+--MyFileUploadBounadary--
+
+### getAllFiles:
+GET http://localhost:8080/api/files
+Accept: application/json
+
+### deleteFile
+DELETE http://localhost:8080/api/files/1685563698521_aaa.jpg
+Accept: application/json
+
+### downloadFile
+GET http://localhost:8080/api/files/download?file=1685562950902_aaa.jpg
+Accept: application/octet-stream
+
+
+

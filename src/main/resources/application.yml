@@ -1,0 +1,6 @@
+aws:
+  s3:
+    secretKey: n/2sydcY5hsdsfdfJmyt0ufdVsdfgfsGx34Fh+XuggPXx0F0I7Y5ZiYZJ
+    accessKey: GDJYDXZ5HNRHCDKDHF
+    bucketName: test-bucket
+    region: us-west-1
